@@ -1,0 +1,134 @@
+﻿@model IEnumerable<MasterFile.Models.Project>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div style="    margin-left: 15rem;">
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<div style="margin:1rem; width: 25%;">
+    <form style="margin:1rem 0;" method="post">
+    <label for="startDate">Start Date: </label>
+    <input type="date" id="startDate" name="startDate" class="form-control" value="@ViewBag.StartDate?.ToString("yyyy-MM-dd")" />
+
+    <label for="endDate">End Date: </label>
+    <input type="date" id="endDate" name="endDate" class="form-control" value="@ViewBag.EndDate?.ToString("yyyy-MM-dd")" />
+
+    <button style="margin:1rem 0;" class="btn btn-sm btn-info" type="submit">Filter</button>
+</form>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.district)</th>
+                <th>@Html.DisplayNameFor(model => model.Coordinate)</th>
+                <th>@Html.DisplayNameFor(model => model.Address)</th>
+                <th>@Html.DisplayNameFor(model => model.TSno)</th>
+                <th>@Html.DisplayNameFor(model => model.AddressOpticalCable)</th>
+                <th>@Html.DisplayNameFor(model => model.ConnectionPointElectricalCable)</th>
+                <th>@Html.DisplayNameFor(model => model.BCGroupNote)</th>
+                <th>@Html.DisplayNameFor(model => model.AVİCOMNote)</th>
+                <th>@Html.DisplayNameFor(model => model.PTZCameraCount)</th>
+                <th>@Html.DisplayNameFor(model => model.FİXCameraCount)</th>
+                <th>@Html.DisplayNameFor(model => model.CapturedCameraCount)</th>
+                <th>@Html.DisplayNameFor(model => model.CapturedNotCameraCount)</th>
+                <th>@Html.DisplayNameFor(model => model.ActualInstalledCameraCount)</th>
+                <th>@Html.DisplayNameFor(model => model.SwitchModel)</th>
+                <th>@Html.DisplayNameFor(model => model.ViewHistory)</th>
+                <th>@Html.DisplayNameFor(model => model.DeliveryDate)</th>
+                <th>@Html.DisplayNameFor(model => model.ExploitationHistory)</th>
+                <th>@Html.DisplayNameFor(model => model.DateFirstImage)</th>
+                <th>@Html.DisplayNameFor(model => model.PoleType)</th>
+                <th>@Html.DisplayNameFor(model => model.ImageAcceptance)</th>
+                <th>@Html.DisplayNameFor(model => model.CommissioningAddingToGenetek)</th>
+                <th>@Html.DisplayNameFor(model => model.Foundation)</th>
+                <th>@Html.DisplayNameFor(model => model.ConnectionType)</th>
+                <th>@Html.DisplayNameFor(model => model.PoleInstallation)</th>
+                <th>@Html.DisplayNameFor(model => model.OpticalShooting)</th>
+                <th>@Html.DisplayNameFor(model => model.OpticalFinish)</th>
+                <th>@Html.DisplayNameFor(model => model.ElectricalWiring)</th>
+                <th>@Html.DisplayNameFor(model => model.FinalStatusBCGOperations)</th>
+                <th>@Html.DisplayNameFor(model => model.HandedOverAvicom)</th>
+                <th>@Html.DisplayNameFor(model => model.AntennaInstallation)</th>
+                <th>@Html.DisplayNameFor(model => model.BoxInstallation)</th>
+                <th>@Html.DisplayNameFor(model => model.InstallationCamera)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstImageAcquisition)</th>
+                <th>@Html.DisplayNameFor(model => model.createDate)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.district)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Coordinate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TSno)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AddressOpticalCable)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ConnectionPointElectricalCable)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BCGroupNote)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AVİCOMNote)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PTZCameraCount)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FİXCameraCount)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CapturedCameraCount)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CapturedNotCameraCount)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ActualInstalledCameraCount)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SwitchModel)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ViewHistory)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DeliveryDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ExploitationHistory)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DateFirstImage)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PoleType)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ImageAcceptance)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CommissioningAddingToGenetek)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Foundation)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ConnectionType)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PoleInstallation)</td>
+                        <td>@Html.DisplayFor(modelItem => item.OpticalShooting)</td>
+                        <td>@Html.DisplayFor(modelItem => item.OpticalFinish)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ElectricalWiring)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FinalStatusBCGOperations)</td>
+                        <td>@Html.DisplayFor(modelItem => item.HandedOverAvicom)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AntennaInstallation)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BoxInstallation)</td>
+                        <td>@Html.DisplayFor(modelItem => item.InstallationCamera)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FirstImageAcquisition)</td>
+                        <td>@Html.DisplayFor(modelItem => item.createDate)</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                                   <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                }
+        </tbody>
+    </table>
+   
+</div>
+ <div style="margin-top:1rem;">
+    <ul class="pagination justify-content-center">
+            @if (ViewBag.CurrentPage > 1)
+            {
+                                                                        <li class="page-item"><a class="page-link" asp-controller="Project" asp-route-page="@(ViewBag.CurrentPage-1)" asp-action="Index" asp-route-StartDate="@ViewBag.StartDate?.ToString("yyyy-MM-dd")" asp-route-EndDate="@ViewBag.EndDate?.ToString("yyyy-MM-dd")"  asp-action="Index"><span>Previous</span></a></li>
+            }
+            @for (int i = 1; i <= 2; i++)
+            {
+                                                                                                    <li class="page-item @(i==ViewBag.CurrentPage?"disabled":"")"><a class="page-link" asp-controller="Project" asp-action="Index" asp-route-StartDate="@ViewBag.StartDate?.ToString("yyyy-MM-dd")" asp-route-EndDate="@ViewBag.EndDate?.ToString("yyyy-MM-dd")" asp-route-page="@i"><span>@i</span></a></li>
+            }
+            @for (int i = 3; i <= ViewBag.TotalPage; i++)
+            {
+                                                                                    <li class="page-item @(i==ViewBag.CurrentPage?"disabled":"")"><a class="page-link"  asp-controller="Project" asp-action="Index" asp-route-StartDate="@ViewBag.StartDate?" asp-route-EndDate="@ViewBag?.EndDate.ToString("yyyy-MM-dd")" asp-route-page="@i"><span>@i</span></a></li>
+            }
+            @if (ViewBag.CurrentPage < ViewBag.TotalPage)
+            {
+                                                                                        <li class="page-item"><a class="page-link" asp-controller="Project"  asp-action="Index" asp-route-StartDate="@ViewBag.StartDate?.ToString("yyyy-MM-dd")" asp-route-EndDate="@ViewBag.EndDate?.ToString("yyyy-MM-dd")" asp-route-page="@(ViewBag.CurrentPage+1)" ><span>Next</span></a></li>
+            }
+                                    </ul>
+</div>
+</div>

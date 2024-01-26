@@ -1,0 +1,287 @@
+﻿@model MasterFile.Models.Project
+@using MasterFile.Models.Enum;
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<h4>Project</h4>
+<hr />
+<div  style="margin:auto;width:50%; class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="district" class="control-label"></label>
+                <input asp-for="district" class="form-control" />
+                <span asp-validation-for="district" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coordinate" class="control-label"></label>
+                <input asp-for="Coordinate" class="form-control" />
+                <span asp-validation-for="Coordinate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TSno" class="control-label"></label>
+                <input asp-for="TSno" class="form-control" />
+                <span asp-validation-for="TSno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressOpticalCable" class="control-label"></label>
+                <input asp-for="AddressOpticalCable" class="form-control" />
+                <span asp-validation-for="AddressOpticalCable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConnectionPointElectricalCable" class="control-label"></label>
+                <input asp-for="ConnectionPointElectricalCable" class="form-control" />
+                <span asp-validation-for="ConnectionPointElectricalCable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BCGroupNote" class="control-label"></label>
+                <input asp-for="BCGroupNote" class="form-control" />
+                <span asp-validation-for="BCGroupNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AVİCOMNote" class="control-label"></label>
+                <input asp-for="AVİCOMNote" class="form-control" />
+                <span asp-validation-for="AVİCOMNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PTZCameraCount" class="control-label"></label>
+                <input asp-for="PTZCameraCount" class="form-control" />
+                <span asp-validation-for="PTZCameraCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FİXCameraCount" class="control-label"></label>
+                <input asp-for="FİXCameraCount" class="form-control" />
+                <span asp-validation-for="FİXCameraCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CapturedCameraCount" class="control-label"></label>
+                <input asp-for="CapturedCameraCount" class="form-control" />
+                <span asp-validation-for="CapturedCameraCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CapturedNotCameraCount" class="control-label"></label>
+                <input asp-for="CapturedNotCameraCount" class="form-control" />
+                <span asp-validation-for="CapturedNotCameraCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActualInstalledCameraCount" class="control-label"></label>
+                <input asp-for="ActualInstalledCameraCount" class="form-control" />
+                <span asp-validation-for="ActualInstalledCameraCount" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="SwitchModel" /> @Html.DisplayNameFor(model => model.SwitchModel)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ViewHistory" class="control-label"></label>
+                <input asp-for="ViewHistory" class="form-control" />
+                <span asp-validation-for="ViewHistory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeliveryDate" class="control-label"></label>
+                <input asp-for="DeliveryDate" class="form-control" />
+                <span asp-validation-for="DeliveryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExploitationHistory" class="control-label"></label>
+                <input asp-for="ExploitationHistory" class="form-control" />
+                <span asp-validation-for="ExploitationHistory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateFirstImage" class="control-label"></label>
+                <input asp-for="DateFirstImage" class="form-control" />
+                <span asp-validation-for="DateFirstImage" class="text-danger"></span>
+            </div>
+<div class="form-group">
+    <label asp-for="PoleType" class="control-label"></label>
+    <select asp-for="PoleType" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(PoleType)))
+                    {
+                <option value="@value" selected="@(Model.PoleType.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="PoleType" class="text-danger"></span>
+</div>
+
+           <div class="form-group">
+    <label asp-for="ImageAcceptance" class="control-label"></label>
+    <select asp-for="ImageAcceptance" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(Concluded)))
+                    {
+                        <option value="@value" selected="@(Model.ImageAcceptance.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="ImageAcceptance" class="text-danger"></span>
+</div>
+
+                      <div class="form-group">
+    <label asp-for="CommissioningAddingToGenetek" class="control-label"></label>
+    <select asp-for="CommissioningAddingToGenetek" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(Concluded)))
+                    {
+                                <option value="@value" selected="@(Model.CommissioningAddingToGenetek.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="CommissioningAddingToGenetek" class="text-danger"></span>
+</div>
+
+
+                      <div class="form-group">
+    <label asp-for="Foundation" class="control-label"></label>
+    <select asp-for="Foundation" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                        <option value="@value" selected="@(Model.Foundation.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="Foundation" class="text-danger"></span>
+</div>
+                       <div class="form-group">
+    <label asp-for="ConnectionType" class="control-label"></label>
+    <select asp-for="ConnectionType" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(ConnectionType)))
+                    {
+                                                <option value="@value" selected="@(Model.ConnectionType.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="Foundation" class="text-danger"></span>
+</div>
+                         <div class="form-group">
+    <label asp-for="PoleInstallation" class="control-label"></label>
+    <select asp-for="PoleInstallation" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                        <option value="@value" selected="@(Model.PoleInstallation.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="PoleInstallation" class="text-danger"></span>
+</div>
+
+                 <div class="form-group">
+    <label asp-for="OpticalShooting" class="control-label"></label>
+    <select asp-for="OpticalShooting" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                                <option value="@value" selected="@(Model.OpticalShooting.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="OpticalShooting" class="text-danger"></span>
+</div>
+                   <div class="form-group">
+    <label asp-for="OpticalFinish" class="control-label"></label>
+    <select asp-for="OpticalFinish" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                                        <option value="@value" selected="@(Model.OpticalFinish.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="OpticalShooting" class="text-danger"></span>
+</div>
+                      <div class="form-group">
+    <label asp-for="ElectricalWiring" class="control-label"></label>
+    <select asp-for="ElectricalWiring" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                                                <option value="@value" selected="@(Model.ElectricalWiring.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="ElectricalWiring" class="text-danger"></span>
+</div>
+
+
+
+                        <div class="form-group">
+    <label asp-for="FinalStatusBCGOperations" class="control-label"></label>
+    <select asp-for="FinalStatusBCGOperations" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                                                        <option value="@value" selected="@(Model.FinalStatusBCGOperations.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="FinalStatusBCGOperations" class="text-danger"></span>
+</div>
+
+                            <div class="form-group">
+    <label asp-for="HandedOverAvicom" class="control-label"></label>
+    <select asp-for="HandedOverAvicom" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                                                                <option value="@value" selected="@(Model.HandedOverAvicom.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="HandedOverAvicom" class="text-danger"></span>
+</div>
+
+
+                                       <div class="form-group">
+    <label asp-for="AntennaInstallation" class="control-label"></label>
+    <select asp-for="AntennaInstallation" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                                                                        <option value="@value" selected="@(Model.AntennaInstallation.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="AntennaInstallation" class="text-danger"></span>
+</div>
+
+                                                  <div class="form-group">
+    <label asp-for="BoxInstallation" class="control-label"></label>
+    <select asp-for="BoxInstallation" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                                                                                <option value="@value" selected="@(Model.BoxInstallation.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="BoxInstallation" class="text-danger"></span>
+</div>
+
+
+                                                         <div class="form-group">
+    <label asp-for="InstallationCamera" class="control-label"></label>
+    <select asp-for="InstallationCamera" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                                                                                        <option value="@value" selected="@(Model.InstallationCamera.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="InstallationCamera" class="text-danger"></span>
+</div>
+                                                                    <div class="form-group">
+    <label asp-for="FirstImageAcquisition" class="control-label"></label>
+    <select asp-for="FirstImageAcquisition" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(WorkInProgress)))
+                    {
+                                                           <option value="@value" selected="@(Model.FirstImageAcquisition.Equals(value))">@value</option>
+                    }
+    </select>
+    <span asp-validation-for="FirstImageAcquisition" class="text-danger"></span>
+</div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="createDate" class="control-label"></label>
+                <input asp-for="createDate" class="form-control" />
+                <span asp-validation-for="createDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
